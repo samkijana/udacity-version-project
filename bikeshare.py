@@ -23,7 +23,7 @@ def get_filters():
     filter_list = ["all", "month", "day"]
 
     while True:
-        city = input("Would you like to see data for Chicago, New York, or Washington?: ").lower().strip()
+        city = input("Would you like to see bikeshare data for Chicago, New York, or Washington?: ").lower().strip()
 
         if city == "" or city not in (CITY_DATA):
             print(f"City entered {city} is not in either Chicago, New York or Washington.")
