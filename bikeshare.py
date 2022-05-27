@@ -23,7 +23,7 @@ def get_filters():
     filter_list = ["all", "month", "day"]
 
     while True:
-        city = input("Would you like to see data for Chicago, New York, or Washington?: ").lower().strip()
+        city = input("Would you like to see bikeshare data for Chicago, New York, or Washington?: ").lower().strip()
 
         if city == "" or city not in (CITY_DATA):
             print(f"City entered {city} is not in either Chicago, New York or Washington.")
@@ -97,7 +97,7 @@ def load_data(city, month, day):
         if day != "all":
             df = df[df['Day Name'] == day.capitalize()]
     except Exception as e:
-        print(f"{e}")
+        print(f"Error: {e}")
 
     return df
 
@@ -130,7 +130,7 @@ def time_stats(df):
         print(f"Most frequent Start Hour is {common_hour}.")
         print(f"This took %s seconds." % (time.time() - start_time))
     except Exception as e:
-        print(f"{e}")
+        print(f"Error: {e}")
 
 def station_stats(df):
     """
@@ -146,7 +146,7 @@ def station_stats(df):
         print(f"Popular Start Station is {common_start_station}.")
         print("This took %s seconds." % (time.time() - start_time))
     except Exception as e:
-        print(f"{e}")
+        print(f"Error: {e}")
 
     try:
         print(f"Retrieving statistic for popular end station.")
@@ -154,7 +154,7 @@ def station_stats(df):
         print(f"Popular End Station is {common_end_station}.")
         print("This took %s seconds." % (time.time() - start_time))
     except Exception as e:
-        print(f"{e}")
+        print(f"Error: {e}")
 
     try:
         print(f"Retrieving statistic for popular start station and end station trip.")
@@ -164,7 +164,7 @@ def station_stats(df):
         print(f"Popular Start Station: {freq_start} and End Station: {freq_end}.\nNumber of Occurrences: {freq_count}.")
         print("This took %s seconds." % (time.time() - start_time))
     except Exception as e:
-        print(f"{e}")
+        print(f"Error: {e}")
 
 def trip_duration_stats(df):
     """
@@ -192,7 +192,7 @@ def trip_duration_stats(df):
         print(f"Total Travel Time: {total_time}, Mean Travel Time: {mean_time:.2f}, Count: {travel_count}.")
         print("This took %s seconds." % (time.time() - start_time))
     except Exception as e:
-        print(f"{e}")
+        print(f"Error: {e}")
 
 def user_stats(df):
     """
@@ -211,7 +211,7 @@ def user_stats(df):
         else:
             print(f"No User Type data!")
     except Exception as e:
-        print(f"{e}")
+        print(f"Error: {e}")
 
     try:
         print(f"Retrieving statistics for gender.")
@@ -222,7 +222,7 @@ def user_stats(df):
         else:
             print("No Gender data!")
     except Exception as e:
-        print(f"{e}")
+        print(f"Error: {e}")
 
     try:
         print(f"Retrieving statistics for birth year.")
@@ -236,7 +236,7 @@ def user_stats(df):
         else:
             print("No Birth Year data!")
     except Exception as e:
-        print(f"{e}")
+        print(f"Error: {e}")
 
 def print_rows(df):
     """
@@ -244,16 +244,16 @@ def print_rows(df):
              df - Pandas DataFrame containing city data filtered by month and day
              Prompts user if they want to review raw data
     Returns:
-             Prints 5 rows of data at a time
+             Prints 10 rows of data at a time
     """
     start_time = time.time()
     try:
         index_start = 0
-        index_end = 4
-        counter = 5
+        index_end = 9
+        counter = 10
 
         while True:
-            if index_start == 0 and index_end == 4:
+            if index_start == 0 and index_end == 9:
                 print_rows = input("Would you like to review rows? Type Yes or No. ").lower().strip()
             else:
                 print_rows = input("Would you like to review 5 more rows of data? Type Yes or No. ").lower().strip()
@@ -267,7 +267,7 @@ def print_rows(df):
             if print_rows == "no":
                 break
     except Exception as e:
-        print(f"{e}")
+        print(f"Error: {e}")
     print("\nThis took %s seconds." % (time.time() - start_time))
 
 def main():
