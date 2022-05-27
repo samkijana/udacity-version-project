@@ -97,7 +97,7 @@ def load_data(city, month, day):
         if day != "all":
             df = df[df['Day Name'] == day.capitalize()]
     except Exception as e:
-        print(f"{e}")
+        print(f"Error: {e}")
 
     return df
 
@@ -130,7 +130,7 @@ def time_stats(df):
         print(f"Most frequent Start Hour is {common_hour}.")
         print(f"This took %s seconds." % (time.time() - start_time))
     except Exception as e:
-        print(f"{e}")
+        print(f"Error: {e}")
 
 def station_stats(df):
     """
@@ -146,7 +146,7 @@ def station_stats(df):
         print(f"Popular Start Station is {common_start_station}.")
         print("This took %s seconds." % (time.time() - start_time))
     except Exception as e:
-        print(f"{e}")
+        print(f"Error: {e}")
 
     try:
         print(f"Retrieving statistic for popular end station.")
@@ -154,7 +154,7 @@ def station_stats(df):
         print(f"Popular End Station is {common_end_station}.")
         print("This took %s seconds." % (time.time() - start_time))
     except Exception as e:
-        print(f"{e}")
+        print(f"Error: {e}")
 
     try:
         print(f"Retrieving statistic for popular start station and end station trip.")
@@ -164,7 +164,7 @@ def station_stats(df):
         print(f"Popular Start Station: {freq_start} and End Station: {freq_end}.\nNumber of Occurrences: {freq_count}.")
         print("This took %s seconds." % (time.time() - start_time))
     except Exception as e:
-        print(f"{e}")
+        print(f"Error: {e}")
 
 def trip_duration_stats(df):
     """
@@ -192,7 +192,7 @@ def trip_duration_stats(df):
         print(f"Total Travel Time: {total_time}, Mean Travel Time: {mean_time:.2f}, Count: {travel_count}.")
         print("This took %s seconds." % (time.time() - start_time))
     except Exception as e:
-        print(f"{e}")
+        print(f"Error: {e}")
 
 def user_stats(df):
     """
@@ -211,7 +211,7 @@ def user_stats(df):
         else:
             print(f"No User Type data!")
     except Exception as e:
-        print(f"{e}")
+        print(f"Error: {e}")
 
     try:
         print(f"Retrieving statistics for gender.")
@@ -222,7 +222,7 @@ def user_stats(df):
         else:
             print("No Gender data!")
     except Exception as e:
-        print(f"{e}")
+        print(f"Error: {e}")
 
     try:
         print(f"Retrieving statistics for birth year.")
@@ -236,7 +236,7 @@ def user_stats(df):
         else:
             print("No Birth Year data!")
     except Exception as e:
-        print(f"{e}")
+        print(f"Error: {e}")
 
 def print_rows(df):
     """
@@ -267,7 +267,7 @@ def print_rows(df):
             if print_rows == "no":
                 break
     except Exception as e:
-        print(f"{e}")
+        print(f"Error: {e}")
     print("\nThis took %s seconds." % (time.time() - start_time))
 
 def main():
