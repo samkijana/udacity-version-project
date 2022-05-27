@@ -37,7 +37,10 @@ Statistics to be computed in bikeshare.py will provide the following information
 Script will also take raw input to create an interactive experience in the terminal to present these statistics.
 
 ### Files used
-Include the files used
+Three csv data files:
+1. chicago.csv
+2. new_york_city.csv
+3. washington.csv
 
 ## Credits
 [udacity / pdsnd_github](https://github.com/udacity/pdsnd_github)
