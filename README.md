@@ -34,6 +34,8 @@ Statistics to be computed in bikeshare.py will provide the following information
    - counts of each gender (only available for NYC and Chicago)
    - earliest, most recent, most common year of birth (only available for NYC and Chicago)
 
+Script will also take raw input to create an interactive experience in the terminal to present these statistics.
+
 ### Files used
 Include the files used
 
