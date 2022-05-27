@@ -244,16 +244,16 @@ def print_rows(df):
              df - Pandas DataFrame containing city data filtered by month and day
              Prompts user if they want to review raw data
     Returns:
-             Prints 5 rows of data at a time
+             Prints 10 rows of data at a time
     """
     start_time = time.time()
     try:
         index_start = 0
-        index_end = 4
-        counter = 5
+        index_end = 9
+        counter = 10
 
         while True:
-            if index_start == 0 and index_end == 4:
+            if index_start == 0 and index_end == 9:
                 print_rows = input("Would you like to review rows? Type Yes or No. ").lower().strip()
             else:
                 print_rows = input("Would you like to review 5 more rows of data? Type Yes or No. ").lower().strip()
