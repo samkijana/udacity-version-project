@@ -37,5 +37,5 @@ Statistics to be computed in bikeshare.py will provide the following information
 ### Files used
 Include the files used
 
-### Credits
-It's important to give proper credit. Add links to any repo that inspired you or blogposts you consulted.
+## Credits
+[udacity / pdsnd_github](https://github.com/udacity/pdsnd_github)
